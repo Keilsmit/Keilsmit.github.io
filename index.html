@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
 
-<!-- in your body -->
+    <!-- in your body -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,19 +40,19 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>Keith's Portfolio Menu</a>
+                <a href="#top" onclick=$( "#menu-close").click();>Keith's Portfolio Menu</a>
             </li>
             <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+                <a href="#top" onclick=$( "#menu-close").click();>Home</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>About</a>
+                <a href="#about" onclick=$( "#menu-close").click();>About</a>
             </li>
             <li>
-                <a href="#services" onclick=$("#menu-close").click();>Technology Stack</a>
+                <a href="#services" onclick=$( "#menu-close").click();>Technology Stack</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+                <a href="#portfolio" onclick=$( "#menu-close").click();>Portfolio</a>
             </li>
         </ul>
     </nav>
@@ -71,13 +71,15 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Software Engineer</h2>
-                    <p class="lead">I’ve spent the past three months immersed in code as a Back-End engineering student at <a href="https://www.theironyard.com/locations/indianapolis.html?_ga=1.208105490.1096561486.1474835262">The Iron Yard</a>. Through this experience I’ve gained far more than just a strong foundation in Ruby on Rails. I can navigate a <a href="https://github.com/Keilsmit">Git</a> workflow and work well on a team of developers to build applications from back to front while adhering to tight deadlines. Most importantly, I’ve gained the tools I’ll need to continue to learn and grow as a software engineer.</p>
+                    <p class="lead">I’ve spent the past three months immersed in code as a Back-End engineering student at <a href="https://www.theironyard.com/locations/indianapolis.html?_ga=1.208105490.1096561486.1474835262">The Iron Yard</a>. Through this experience
+                        I’ve gained far more than just a strong foundation in Ruby on Rails. I can navigate a <a href="https://github.com/Keilsmit">Git</a> workflow and work well on a team of developers to build applications from back to front while adhering
+                        to tight deadlines. Most importantly, I’ve gained the tools I’ll need to continue to learn and grow as a software engineer.</p>
                 </div>
                 <br/>
                 <div class="col-lg-12 text-center">
-                  <a href="KeithSmith_2017Resume.pdf" target="_blank">
-                  <i class="fa fa-file-text fa-4x" aria-hidden="true"></i></a>
-                  <h5>Resume[.pdf]</h5>
+                    <a href="KeithSmith_2017Resume.pdf" target="_blank">
+                        <i class="fa fa-file-text fa-4x" aria-hidden="true"></i></a>
+                    <h5>Resume[.pdf]</h5>
                 </div>
             </div>
             <!-- /.row -->
@@ -216,11 +218,11 @@
                     <div class="row">
 
                         <div class="col-md-6">
-                          <div class="portfolio-item">
-                              <a href="https://tpmcclelland.github.io/w6d4-chirp/" target="_blank">
-                                  <img class="img-portfolio img-responsive" src="img/chirp_pic.png">
-                              </a>
-                          </div>
+                            <div class="portfolio-item">
+                                <a href="https://tpmcclelland.github.io/w6d4-chirp/" target="_blank">
+                                    <img class="img-portfolio img-responsive" src="img/chirp_pic.png">
+                                </a>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
@@ -283,76 +285,76 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
+        // Closes the sidebar menu
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Scrolls to the selected menu item on the page
+        $(function() {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function() {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    // $('#to-top').css({position:'fixed', display:'block'});
+                    $('#to-top').show("slow", function() {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function() {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
                 }
             }
         });
-    });
-    //#to-top button appears after scrolling
-    var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                // $('#to-top').css({position:'fixed', display:'block'});
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
-                });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
-        }
-    });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
+        // Disable Google Maps scrolling
+        // See http://stackoverflow.com/a/25904582/1607849
+        // Disable scroll zooming and bind back the click event
+        var onMapMouseleaveHandler = function(event) {
             var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
         }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
+        var onMapClickHandler = function(event) {
+                var that = $(this);
+                // Disable the click handler until the user leaves the map area
+                that.off('click', onMapClickHandler);
+                // Enable scrolling zoom
+                that.find('iframe').css("pointer-events", "auto");
+                // Handle the mouse leave event
+                that.on('mouseleave', onMapMouseleaveHandler);
+            }
+            // Enable map zooming with mouse scroll when the user clicks the map
+        $('.map').on('click', onMapClickHandler);
     </script>
 
 </body>
